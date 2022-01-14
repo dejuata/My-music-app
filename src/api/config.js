@@ -7,6 +7,7 @@ export const config = {
 
 export const endpoints = {
     recommendations: 'recommendations',
+    tracks: 'tracks',
     me: 'me',
     newReleases: 'browse/new-releases',
     favorites: 'me/tracks',

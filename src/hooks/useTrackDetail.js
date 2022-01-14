@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from "react"
-import { getRecommendedTracks } from "../api/selectors/getRecommendedTracks";
+import { useContext, useEffect, useState } from "react"
+import { getTrackDetail } from "../api/selectors/getTrackDetail";
 import { AuthContext } from "../auth/authContext";
 
-export const useRecommendedTracks = ( category ) => {
+export const useTrackDetail = ( trackId ) => {
     const { user } = useContext(AuthContext);
     const { token } = user;
 
@@ -12,14 +12,14 @@ export const useRecommendedTracks = ( category ) => {
     })
 
     useEffect(() => {
-        getRecommendedTracks(category, token)
+        getTrackDetail(trackId, token)
             .then( tracks => {
                 setState({
                     data: tracks,
                     loading: false
                 })
             })
-    }, [category, token])
+    }, [])
 
     return state;
 }

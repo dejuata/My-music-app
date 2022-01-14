@@ -9,6 +9,7 @@
     width: 300px;
     border-radius: 6px;
     margin: 0 auto;
+    text-decoration: none;
 }
 
 .card-track__body {

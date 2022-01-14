@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Navbar } from '../components/organisms/Navbar/Navbar'
 import { FavoritesPage } from '../components/pages/favorites/FavoritesPage'
 import { HomePage } from '../components/pages/home/HomePage'
+import { TrackPage } from '../components/pages/track/TrackPage'
 
 
 import '../index.css';
@@ -15,6 +16,7 @@ export const HomeRoutes = () => {
                 <Routes>
                     <Route path="home" element={<HomePage />} />
                     <Route path="favorites" element={<FavoritesPage />} />
+                    <Route path="track/:trackId" element={<TrackPage />} />
 
                     <Route path="/" element={<HomePage />} />
                 </Routes>

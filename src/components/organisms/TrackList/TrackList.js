@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { getRecommendedTracks } from '../../../api/selectors/getRecommendedTracks';
+import React from 'react'
 import { TrackCard } from '../../molecules/TrackCard/TrackCard'
+import { Link } from 'react-router-dom';
 
 import './tracklist.css';
 
@@ -13,7 +13,9 @@ export const TrackList = ({ tracks }) => {
                 tracks.map( track => {
                     return (
                         <div className='card-continar'>
-                            <TrackCard  key={ track.id } { ...track }/>
+                            <Link to={`/track/${track.id}`} style={{ textDecoration: 'none' }}>
+                                <TrackCard  key={ track.id } { ...track }/>
+                            </Link>
                         </div>)
                 })
             }

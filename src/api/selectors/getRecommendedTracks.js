@@ -6,7 +6,7 @@ import { baseUrl, endpoints } from '../config';
 
 
 export const getRecommendedTracks =  async (category, token) => {
-
+    console.log(category)
     let tracks = [];
     try {
         const limit = 10;
