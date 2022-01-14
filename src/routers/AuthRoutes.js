@@ -7,15 +7,12 @@ import { SignUpPage } from '../components/pages/signup/SignUpPage'
 export const AuthRoutes = () => {
     return (
         <>
-            {/* <Navbar /> */}
-            <div className='container'>
-                <Routes>
-                    <Route path="sign-in" element={<SignInPage />} />
-                    <Route path="sign-up" element={<SignUpPage />} />
+            <Routes>
+                {/* <Route path="sign-in" element={<SignInPage />} /> */}
+                {/* <Route path="sign-up" element={<SignUpPage />} /> */}
 
-                    <Route path="/" element={<SignInPage />} />
-                </Routes>
-            </div>
+                <Route path="/" element={<SignInPage />} />
+            </Routes>
         </>
     )
 }
