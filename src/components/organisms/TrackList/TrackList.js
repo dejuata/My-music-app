@@ -8,17 +8,12 @@ export const TrackList = ({ tracks }) => {
 
 
     return (
-        <>
+        <div className='card-container'>
             {
                 tracks.map( track => {
-                    return (
-                        <div className='card-continar'>
-                            <Link to={`/track/${track.id}`} style={{ textDecoration: 'none' }}>
-                                <TrackCard  key={ track.id } { ...track }/>
-                            </Link>
-                        </div>)
+                    return <TrackCard  key={ track.id } { ...track }/>
                 })
             }
-        </>
+        </div>
     )
 }

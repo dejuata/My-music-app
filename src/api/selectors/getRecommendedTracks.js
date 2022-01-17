@@ -9,7 +9,7 @@ export const getRecommendedTracks =  async (category, token) => {
     console.log(category)
     let tracks = [];
     try {
-        const limit = 10;
+        const limit = 15;
 
         const res = await axios.get(`${baseUrl}/${endpoints.recommendations}?seed_genres=${category}&limit=${limit}`, {
             headers: { Authorization: `Bearer ${token}` },

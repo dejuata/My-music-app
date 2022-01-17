@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { FaHeart, FaPowerOff } from 'react-icons/fa';
+import { FaHeart, FaPowerOff, FaHome } from 'react-icons/fa';
 
 
 import './navbar.css';
@@ -36,8 +36,11 @@ export const Navbar = () => {
 
             <NavLink to="/">
                 <div>
-                    <img src={logoPath} alt="logo" className='o-navbar-logo'/>
+                    <FaHome className='o-navbar__icon'/>
                 </div>
+                {/* <div>
+                    <img src={logoPath} alt="logo" className='o-navbar-logo'/>
+                </div> */}
             </NavLink>
 
             <div onClick={ handleLogout }>

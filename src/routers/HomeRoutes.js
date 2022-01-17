@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { Header } from '../components/organisms/Header/Header'
 import { Navbar } from '../components/organisms/Navbar/Navbar'
 import { FavoritesPage } from '../components/pages/favorites/FavoritesPage'
 import { HomePage } from '../components/pages/home/HomePage'
@@ -12,6 +13,9 @@ import '../index.css';
 export const HomeRoutes = () => {
     return (
         <>
+
+            <Header />
+
             <div className='home-container'>
                 <Routes>
                     <Route path="home" element={<HomePage />} />

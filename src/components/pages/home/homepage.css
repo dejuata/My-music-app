@@ -1,17 +1,11 @@
-.container {
-    /* width: 90%;
-    margin: 0 auto;
-    margin-top: 1rem; */
-
-}
-
 .container-title {
     padding: 12px 0;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    /* margin: 0 auto; */
     background-color: var(--color-dark);
-    position: sticky;
-    top: 0;
+    font-size: var(--sm);
+    /* position: sticky; */
+    /* top: 0; */
     transition: ease all .5s;
 }
 
