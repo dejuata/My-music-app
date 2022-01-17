@@ -11,15 +11,15 @@ export const AppRouter = () => {
             <Routes>
 
                 <Route path="/auth/*" element={
-                    <PublicRoute>
+                    // <PublicRoute>
                         <AuthRoutes />
-                    </PublicRoute>
+                    // </PublicRoute>
                 } />
 
                 <Route path="/*" element={
-                    <PrivateRoute>
+                    // <PrivateRoute>
                         <HomeRoutes />
-                    </PrivateRoute>
+                    // </PrivateRoute>
                 } />
 
             </Routes>

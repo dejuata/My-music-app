@@ -13,12 +13,10 @@ import '../index.css';
 export const HomeRoutes = () => {
     return (
         <>
-
             <Header />
 
             <div className='home-container'>
                 <Routes>
-                    <Route path="home" element={<HomePage />} />
                     <Route path="favorites" element={<FavoritesPage />} />
                     <Route path="track/:trackId" element={<TrackPage />} />
 
@@ -29,7 +27,6 @@ export const HomeRoutes = () => {
             <div className='home-navbar'>
                 <Navbar />
             </div>
-
         </>
     )
 }

@@ -8,9 +8,10 @@ import './homepage.css';
 
 export const HomePage = () => {
     console.log('HomePage')
-    const { data:tracks, loading } = useRecommendedTracks('latin');
+    // const { data:tracks, loading } = useRecommendedTracks('latin');
 
-
+    const loading = false;
+    const tracks = [];
     return (
         <>
             <div className='container-title'>
