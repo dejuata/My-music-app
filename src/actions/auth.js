@@ -65,11 +65,11 @@ export const startGoogleLogin = () =>{
     }
 }
 
-export const login = (uid, displayName, type, token) => ({
+export const login = (uid, name, type, token) => ({
     type: types.login,
     payload: {
         uid,
-        displayName,
+        name,
         type,
         token
     }

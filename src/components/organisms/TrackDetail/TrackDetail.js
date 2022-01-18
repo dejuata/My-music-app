@@ -1,7 +1,5 @@
 import React from 'react'
-import { SecondaryButton } from '../../atoms/SecondaryButton/SecondaryButton';
-
-import './trackdetail.css';
+import { SpotifyButton } from '../../atoms/SpotifyButton/SpotifyButton';
 
 export const TrackDetail = ({
     id,
@@ -14,26 +12,26 @@ export const TrackDetail = ({
     external_url
 }) => {
     return (
-        <div className='track-detail'>
+        <div className='o-track-detail'>
 
-            <figure className='track-detail__image'>
+            <figure className='o-track-detail__image'>
                 <img src={ image } alt={ album }/>
             </figure>
 
-            <div className='track-detail__body'>
+            <div className='o-track-detail__body'>
 
-                <div className='track-detail__body-title'>
+                <div className='o-track-detail__body-title'>
                     <h2>{ name }</h2>
                     <p>{ artists }</p>
                 </div>
 
-                <div className='track-detail__body-info'>
+                <div className='o-track-detail__body-info'>
                     <p>This song belongs to the Album <strong>{album}</strong> released on { album_date }.</p>
                     <p><strong>Duration: </strong>{ duration } min.</p>
                 </div>
 
-                <div className='track-detail__body-footer'>
-                    <SecondaryButton url={ external_url }/>
+                <div className='o-track-detail__body-footer'>
+                    <SpotifyButton url={ external_url }/>
                 </div>
             </div>
         </div>

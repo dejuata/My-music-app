@@ -3,10 +3,10 @@ import React from 'react'
 export const LoginButton = ({ url }) => {
 
     return (
-        <div className='btn btn-secondary'>
-            <a href={url} >
+        <a href={url} >
+            <div className='btn btn-secondary'>
                 Log In with Spotify
-            </a>
-        </div>
+            </div>
+        </a>
     )
 }

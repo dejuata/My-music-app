@@ -7,4 +7,9 @@
 
 
 // Components
+@import './components/atoms/logo';
+
 @import './components/molecules/trackcard';
+
+@import './components/organisms/header';
+@import './components/organisms/trackDetail';
