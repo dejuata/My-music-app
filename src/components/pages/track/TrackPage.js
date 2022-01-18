@@ -12,8 +12,16 @@ export const TrackPage = () => {
 
 
     return (
-        <div>
-            <TrackDetail {...track}/>
-        </div>
+        <>
+            {
+
+                loading
+                ?
+                    <p>Loading</p>
+                :
+                    <TrackDetail {...track}/>
+
+            }
+        </>
     )
 }

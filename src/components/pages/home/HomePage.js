@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { useRecommendedTracks } from '../../../hooks/useRecommendedTracks';
+import React from 'react'
+import { useSelector } from 'react-redux';
 import { TrackList } from '../../organisms/TrackList/TrackList'
 
-// import './homepage.css';
-
-// const category = 'latin';
-
 export const HomePage = () => {
-    console.log('HomePage')
-    const { data:tracks, loading } = useRecommendedTracks('latin');
+
+    const loading = false;
+    const { tracks } = useSelector(state => state.track);
 
     return (
         <>

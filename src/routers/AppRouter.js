@@ -1,8 +1,8 @@
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom';
-import { login } from '../actions/auth';
+import { setTracks } from '../actions/track';
+import { useRecommendedTracks } from '../hooks/useRecommendedTracks';
 import { AuthRoutes } from './AuthRoutes';
 import { HomeRoutes } from './HomeRoutes';
 import { PrivateRoute } from './PrivateRoute';
@@ -12,16 +12,20 @@ export const AppRouter = () => {
 
     const [checking, setChecking] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false)
-    const { logged } = useSelector(state => state.auth);
+    const { token, logged } = useSelector(state => state.auth);
+
+    const { data } = useRecommendedTracks('latin')
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (logged) {
             setIsLoggedIn(true);
+            dispatch( setTracks(data) );
         } else {
             setIsLoggedIn(false);
         }
         setChecking(false)
-    }, [logged])
+    }, [logged, token, dispatch, data])
 
     if (checking) {
         return (

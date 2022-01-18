@@ -5,7 +5,7 @@ export const Header = () => {
 
     const logoPath = `/assets/logo.svg`;
     const { name } = useSelector(state => state.auth)
-    console.log('name', name)
+
     return (
         <header className='header'>
             <div className='header__logo'>

@@ -9,7 +9,5 @@ export const types = {
     uiStartLoading: '[ui] start loading',
     uiFinishLoading: '[ui] finish loading',
 
-    setToken: '[token] set token',
-    isLogged: '[token] is logged',
-    removeToken: '[token] remove token'
+    setTracks: '[track] set tracks'
 }

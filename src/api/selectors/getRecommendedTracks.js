@@ -4,9 +4,8 @@ import { truncateString } from '../../helpers/trucateString';
 import { baseUrl, endpoints } from '../config';
 
 
-
 export const getRecommendedTracks =  async (category, token) => {
-    console.log(category)
+
     let tracks = [];
     try {
         const limit = 15;
@@ -33,8 +32,8 @@ export const getRecommendedTracks =  async (category, token) => {
 
         return tracks;
 
-    } catch {
-        console.log('[Error] getRecommendedTracks')
+    } catch (err) {
+        console.log('[Error] getRecommendedTracks', err)
         return tracks
     }
 
