@@ -1,25 +1,25 @@
-// import React, { useContext, useEffect, useState } from "react"
-// import { getRecommendedTracks } from "../api/selectors/getRecommendedTracks";
-// import { AuthContext } from "../auth/authContext";
+import React, { useEffect, useState } from "react"
+import { getRecommendedTracks } from "../api/selectors/getRecommendedTracks";
+import { useSelector } from 'react-redux';
 
-// export const useRecommendedTracks = ( category ) => {
-//     const { user } = useContext(AuthContext);
-//     const { token } = user;
+export const useRecommendedTracks = ( category ) => {
 
-//     const [state, setState] = useState({
-//         data: [],
-//         loading: true
-//     })
+    const { token } = useSelector(state => state.auth);
 
-//     useEffect(() => {
-//         getRecommendedTracks(category, token)
-//             .then( tracks => {
-//                 setState({
-//                     data: tracks,
-//                     loading: false
-//                 })
-//             })
-//     }, [category, token])
+    const [state, setState] = useState({
+        data: [],
+        loading: true
+    })
 
-//     return state;
-// }
+    useEffect(() => {
+        getRecommendedTracks(category, token)
+            .then( tracks => {
+                setState({
+                    data: tracks,
+                    loading: false
+                })
+            })
+    }, [category, token])
+
+    return state;
+}

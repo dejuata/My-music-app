@@ -21,9 +21,8 @@ export const startLoginEmailPassword = (email, password) =>{
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
-                console.log(user)
-                console.log(user.uid, user.displayName)
-                dispatch(login(user.uid, user.displayName))
+                console.log('dispatch login')
+                dispatch(login(user.uid, user.displayName, 'firebase', ''))
             })
             .catch( (err) => {
                 console.log(err.code, err.message);
@@ -45,7 +44,7 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
                     displayName: name,  photoURL: ""
                 })
 
-                dispatch(login(user.uid, user.displayName))
+                dispatch(login(user.uid, user.displayName, 'firebase', ''))
 
             })
             .catch( (err) => {
@@ -66,11 +65,13 @@ export const startGoogleLogin = () =>{
     }
 }
 
-export const login = (uid, displayName) => ({
+export const login = (uid, displayName, type, token) => ({
     type: types.login,
     payload: {
         uid,
-        displayName
+        displayName,
+        type,
+        token
     }
 })
 

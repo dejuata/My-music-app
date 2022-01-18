@@ -11,35 +11,6 @@ import { LoginForm } from '../../organisms/LoginForm/LoginForm';
 export const LoginPage = () => {
 
     const loginUrl = getUrlLogin();
-    // const { hash } = useLocation();
-    // const token = getTokenFromUrl(hash)
-    // console.log(token)
-
-    // useEffect(() => {
-
-    //     if (token) {
-    //         const action = {
-    //             type: authType.login,
-    //             payload: {
-    //                 token
-    //             }
-    //         }
-    //         console.log(action)
-    //         dispatch(action);
-
-    //         navigate('/', {
-    //             replace: true
-    //         })
-    //     } else {
-    //         console.log('No se puede loguear')
-    //         navigate('/auth', {
-    //             replace: true
-    //         })
-    //     }
-
-    // }, [token])
-
-
 
     return (
         <div className='auth-form__container'>

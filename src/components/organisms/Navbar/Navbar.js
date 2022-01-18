@@ -4,15 +4,19 @@ import { FaHeart, FaPowerOff, FaHome } from 'react-icons/fa';
 
 
 import './navbar.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { startLogout } from '../../../actions/auth';
 import { finishLoading } from '../../../actions/ui';
 
 export const Navbar = () => {
 
     const dispatch = useDispatch()
+    // const { logged } = useSelector(state => state.token);
 
     const handleLogout = () => {
+        // dispatch( removeToken() );
+        // if (logged) {
+        // }
         dispatch( startLogout() )
         dispatch( finishLoading() )
     }
