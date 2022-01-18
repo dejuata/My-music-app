@@ -17,10 +17,10 @@ export const HomeRoutes = () => {
 
             <div className='home-container'>
                 <Routes>
-                    <Route path="favorites" element={<FavoritesPage />} />
-                    <Route path="track/:trackId" element={<TrackPage />} />
+                    {/* <Route path="favorites" element={<FavoritesPage />} /> */}
+                    {/* <Route path="track/:trackId" element={<TrackPage />} /> */}
 
-                    <Route path="/" element={<HomePage />} />
+                    {/* <Route path="/" element={<HomePage />} /> */}
                 </Routes>
             </div>
 

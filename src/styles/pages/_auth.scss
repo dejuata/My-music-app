@@ -16,3 +16,15 @@
 .auth__button {
     margin-top: 4rem;
 }
+
+.auth__link {
+    color: $color-white;
+    text-decoration: none;
+    font-size: $font-sm;
+    text-align: center;
+    margin-top: 12px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

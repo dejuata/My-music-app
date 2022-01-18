@@ -1,5 +1,4 @@
 import React from 'react'
-import { LoginButton } from '../../atoms/login/LoginButton'
 import { Logo } from '../../atoms/Logo/Logo'
 import { RegisterForm } from '../../organisms/RegisterForm/RegisterForm'
 

@@ -4,6 +4,14 @@ form {
     width: 100%;
 }
 
+a {
+    text-decoration: none;
+
+    &:visited {
+        color: $color-white;
+    }
+}
+
 .mt-1 {
     margin-top: 6px;
 }

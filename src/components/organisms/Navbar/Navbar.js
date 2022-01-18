@@ -4,27 +4,18 @@ import { FaHeart, FaPowerOff, FaHome } from 'react-icons/fa';
 
 
 import './navbar.css';
-// import { AuthContext } from '../../../auth/authContext';
-// import { authType } from '../../../types/authType';
+import { useDispatch } from 'react-redux';
+import { startLogout } from '../../../actions/auth';
+import { finishLoading } from '../../../actions/ui';
 
 export const Navbar = () => {
 
-    // const { user, dispatch } = useContext(AuthContext);
-    // const navigate = useNavigate();
+    const dispatch = useDispatch()
 
-    // const logoPath = `/assets/logo.svg`;
-
-    // const handleLogout = () => {
-    //     const action = {
-    //         type: authType.logout
-    //     }
-
-    //     dispatch(action);
-
-    //     navigate('/auth', {
-    //         replace: true
-    //     })
-    // }
+    const handleLogout = () => {
+        dispatch( startLogout() )
+        dispatch( finishLoading() )
+    }
 
     return (
         <nav className='o-navbar'>
@@ -38,13 +29,10 @@ export const Navbar = () => {
                 <div>
                     <FaHome className='o-navbar__icon'/>
                 </div>
-                {/* <div>
-                    <img src={logoPath} alt="logo" className='o-navbar-logo'/>
-                </div> */}
             </NavLink>
 
-            <div 
-                // onClick={ handleLogout }
+            <div
+                onClick={ handleLogout }
             >
                 <FaPowerOff className='o-navbar__icon'/>
             </div>

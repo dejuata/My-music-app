@@ -1,14 +1,32 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { useForm } from '../../../hooks/useForm';
+import { startLoginEmailPassword } from '../../../actions/auth';
 
 export const LoginForm = () => {
+
+    const dispatch = useDispatch();
+
+    const [ formValues, handleInputChange ] = useForm({
+        email: 'demo@gmail.com',
+        password: '123456'
+    })
+
+    const { email, password } = formValues;
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        dispatch( startLoginEmailPassword(email, password) )
+    }
+
     return (
-        <form>
+        <form onSubmit={ handleLogin }>
             <div
                 className='form-control mb-2'
             >
                 <label
-                    for="email"
                     className='label'
                 >
                     Email address
@@ -20,6 +38,8 @@ export const LoginForm = () => {
                     name="email"
                     className='input'
                     autoComplete='off'
+                    value={ email }
+                    onChange={ handleInputChange }
                 />
             </div>
 
@@ -27,7 +47,6 @@ export const LoginForm = () => {
                 className='form-control mb-3'
             >
                 <label
-                    for="password"
                     className='label'
                 >
                     Password
@@ -39,6 +58,8 @@ export const LoginForm = () => {
                     name="password"
                     className='input'
                     autoComplete='off'
+                    value={ password }
+                    onChange={ handleInputChange }
                 />
             </div>
 
@@ -49,7 +70,7 @@ export const LoginForm = () => {
                 Log in
             </button>
 
-            <Link to="/auth/signup" className='o-login__link'>
+            <Link to="/auth/register" className='auth__link'>
                 Create new account
             </Link>
         </form>

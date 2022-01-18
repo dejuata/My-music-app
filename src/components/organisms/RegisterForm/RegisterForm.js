@@ -1,14 +1,61 @@
 import React from 'react'
+import validator from 'validator'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
+import { startRegisterWithEmailPasswordName } from '../../../actions/auth';
+import { removeError, setError } from '../../../actions/ui';
+import { useForm } from '../../../hooks/useForm'
 
 export const RegisterForm = () => {
+
+    const dispatch = useDispatch();
+    const { msgError } = useSelector(state => state.ui)
+
+    const [ formValues, handleInputChange ] = useForm({
+        name: 'Juan David',
+        email: 'demo1@gmail.com',
+        password: '123456',
+        password2: '123456'
+    })
+
+    const { name, email, password, password2 } = formValues;
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+
+        if ( isFormValid() ) {
+            dispatch( startRegisterWithEmailPasswordName(email, password, name) )
+        }
+    }
+
+    const isFormValid = () => {
+
+        if ( name.trim().length === 0) {
+            dispatch(setError('Name is required'));
+            return false;
+        } else if ( !validator.isEmail( email ) ) {
+            dispatch(setError('Email is not valid'));
+            return false;
+        } else if ( password !== password2 || password.length < 5) {
+            dispatch(setError('Password should be a least 6 characters and match each other'));
+            return false;
+        }
+
+        dispatch(removeError())
+        return true
+    }
+
     return (
-        <form>
+        <form onSubmit={ handleRegister }>
+
+            <div className='alert alert-error'>
+                { msgError }
+            </div>
+
             <div
                 className='form-control mb-2'
             >
                 <label
-                    for="name"
                     className='label'
                 >
                     Name
@@ -20,6 +67,8 @@ export const RegisterForm = () => {
                     name="name"
                     className='input'
                     autoComplete='off'
+                    value={ name }
+                    onChange={ handleInputChange }
                 />
             </div>
 
@@ -27,7 +76,6 @@ export const RegisterForm = () => {
                 className='form-control mb-2'
             >
                 <label
-                    for="email"
                     className='label'
                 >
                     Email address
@@ -39,6 +87,8 @@ export const RegisterForm = () => {
                     name="email"
                     className='input'
                     autoComplete='off'
+                    value={ email }
+                    onChange={ handleInputChange }
                 />
             </div>
 
@@ -46,7 +96,6 @@ export const RegisterForm = () => {
                 className='form-control mb-2'
             >
                 <label
-                    for="password"
                     className='label'
                 >
                     Password
@@ -58,6 +107,8 @@ export const RegisterForm = () => {
                     name="password"
                     className='input'
                     autoComplete='off'
+                    value={ password }
+                    onChange={ handleInputChange }
                 />
             </div>
 
@@ -65,7 +116,6 @@ export const RegisterForm = () => {
                 className='form-control mb-3'
             >
                 <label
-                    for="password2"
                     className='label'
                 >
                     Confirm Password
@@ -77,6 +127,8 @@ export const RegisterForm = () => {
                     name="password2"
                     className='input'
                     autoComplete='off'
+                    value={ password2 }
+                    onChange={ handleInputChange }
                 />
             </div>
 
@@ -87,7 +139,7 @@ export const RegisterForm = () => {
                 Sign Up
             </button>
 
-            <Link to="/auth/signup" className='o-login__link'>
+            <Link to="/auth/login" className='auth__link'>
                 Already registered ?
             </Link>
         </form>
