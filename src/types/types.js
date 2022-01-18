@@ -9,5 +9,7 @@ export const types = {
     uiStartLoading: '[ui] start loading',
     uiFinishLoading: '[ui] finish loading',
 
-    setTracks: '[track] set tracks'
+    setTracks: '[track] set tracks',
+
+    setFavorites: '[favorite] set favorite'
 }

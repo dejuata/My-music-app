@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom';
-import { setTracks } from '../actions/track';
-import { useRecommendedTracks } from '../hooks/useRecommendedTracks';
 import { AuthRoutes } from './AuthRoutes';
 import { HomeRoutes } from './HomeRoutes';
 import { PrivateRoute } from './PrivateRoute';
@@ -14,18 +12,14 @@ export const AppRouter = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const { token, logged } = useSelector(state => state.auth);
 
-    const { data } = useRecommendedTracks('latin')
-    const dispatch = useDispatch();
-
     useEffect(() => {
         if (logged) {
             setIsLoggedIn(true);
-            dispatch( setTracks(data) );
         } else {
             setIsLoggedIn(false);
         }
         setChecking(false)
-    }, [logged, token, dispatch, data])
+    }, [logged, token])
 
     if (checking) {
         return (

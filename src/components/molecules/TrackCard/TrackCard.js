@@ -17,7 +17,7 @@ export const TrackCard = ({
         <div className='m-card-track'>
 
             <div className='m-card-track__body'>
-                <Link to={`track/${id}`} style={{ textDecoration: 'none' }}>
+                <Link to={`/track/${id}`} style={{ textDecoration: 'none' }}>
                     <figure className='m-card-track__body-image'>
                         <img src={ image } alt={ album }/>
                     </figure>

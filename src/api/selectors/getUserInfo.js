@@ -6,7 +6,7 @@ export const getUserInfo = async (token) => {
         const res = await axios.get(`${baseUrl}/${endpoints.me}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
-        console.log('res', res)
+
         const { data, status } = res;
 
         if (status === 200) {

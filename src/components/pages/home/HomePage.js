@@ -1,5 +1,7 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { setTracks } from '../../../actions/track';
+import { getRecommendedTracks } from '../../../api/selectors/getRecommendedTracks';
 import { TrackList } from '../../organisms/TrackList/TrackList'
 
 export const HomePage = () => {

@@ -6,6 +6,7 @@ import storage from "redux-persist/lib/storage";
 import { authReducer } from "../reducers/authReducer";
 import { uiReducer } from "../reducers/uiReducer";
 import { trackReducer } from "../reducers/trackReducer";
+import { favoriteReducer } from "../reducers/favoriteReducer";
 
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
@@ -18,7 +19,8 @@ const persistConfig = {
 const reducers = combineReducers({
     auth: authReducer,
     ui: uiReducer,
-    track: trackReducer
+    track: trackReducer,
+    favorite: favoriteReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, reducers);
