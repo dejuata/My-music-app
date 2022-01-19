@@ -11,6 +11,13 @@ export const favoriteReducer = (state = initialState, action) => {
                 tracks: action.payload
             }
 
+        case types.removeFavorite:
+            state.tracks[action.payload].favorite = false;
+            delete state.tracks[action.payload];
+            return {
+                ...state
+            }
+
         default:
             return state;
     }

@@ -1,0 +1,20 @@
+.a-favorite-button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin-top: 6px;
+}
+
+.a-favorite__icon {
+    color: #AAB8C2;
+    transition: color .3s ease;
+    font-size: $font-xlg;
+}
+
+.a-favorite__icon--active {
+    color: #E2264D;
+}
+

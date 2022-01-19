@@ -10,6 +10,10 @@ export const types = {
     uiFinishLoading: '[ui] finish loading',
 
     setTracks: '[track] set tracks',
+    addTrackFavorite: '[track] add track favorite',
+    removeTrackFavorite: '[track] remove track favorite',
 
-    setFavorites: '[favorite] set favorite'
+    setFavorites: '[favorite] set favorite',
+    addFavorite: '[favorite] add favorite',
+    removeFavorite: '[favorite] remove favorite',
 }

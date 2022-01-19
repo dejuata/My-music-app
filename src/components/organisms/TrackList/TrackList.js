@@ -10,7 +10,8 @@ export const TrackList = ({ tracks }) => {
     return (
         <div className='card-container'>
             {
-                tracks.map( track => {
+                tracks.map( (track, index) => {
+                    track.index = index;
                     return <TrackCard  key={ track.id } { ...track }/>
                 })
             }

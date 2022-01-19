@@ -19,8 +19,6 @@ export const FavoritesPage = () => {
             })
     }, [token, dispatch])
 
-    console.log('state favorite', tracks)
-
     return (
         <>
             <div className='home__container-title'>

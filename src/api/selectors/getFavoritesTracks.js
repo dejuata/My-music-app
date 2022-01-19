@@ -2,8 +2,6 @@ import axios from 'axios';
 import { convertMillisToMinutesAndSeconds } from '../../helpers/convertMillisToMinutesAndSeconds';
 import { truncateString } from '../../helpers/trucateString';
 import { baseUrl, endpoints } from '../config';
-import { store } from '../../store/store';
-import { setFavorites } from '../../actions/favorite';
 
 
 export const getFavoritesTracks =  async (token) => {
@@ -26,7 +24,8 @@ export const getFavoritesTracks =  async (token) => {
                     album: track.album.name,
                     artists: track.artists[0].name,
                     duration: convertMillisToMinutesAndSeconds(track.duration_ms),
-                    image: track.album.images[1].url
+                    image: track.album.images[1].url,
+                    favorite: true
                 }
             })
         }

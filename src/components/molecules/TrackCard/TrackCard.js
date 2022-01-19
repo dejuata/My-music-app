@@ -1,5 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { putFavoriteTrack } from '../../../api/selectors/putFavoriteTrack';
+import { useDispatch, useSelector } from 'react-redux';
+import { FavoriteButton } from '../../atoms/FavoriteButton/FavoriteButton';
+import { deleteFavoriteTrack } from '../../../api/selectors/deleteFavoriteTrack';
+import { removeFavorite } from '../../../actions/favorite';
+import { addTrackFavorite, removeTrackFavorite } from '../../../actions/track';
 
 export const TrackCard = ({
     id,
@@ -8,9 +14,32 @@ export const TrackCard = ({
     album,
     artists,
     duration,
-    image
+    image,
+    favorite,
+    index
 }) => {
 
+    const { token, logged } = useSelector(state => state.auth);
+    const { pathname } = useLocation();
+    const dispatch = useDispatch();
+
+    const handleActive = () => {
+        putFavoriteTrack(token, id)
+        if (pathname === '/') {
+            dispatch( addTrackFavorite(index) );
+        }
+    }
+
+    const handleDeactive = () => {
+        deleteFavoriteTrack(token, id)
+        if (pathname === '/favorites') {
+            dispatch( removeFavorite(index) );
+        }
+
+        if (pathname === '/') {
+            dispatch( removeTrackFavorite(index) );
+        }
+    }
 
     return (
 
@@ -29,8 +58,14 @@ export const TrackCard = ({
             </div>
 
             <div className='m-card-track__footer'>
-                <span>{ duration}</span>
+                <span>{ duration }</span>
+                <FavoriteButton
+                    funcActive={ handleActive }
+                    funcDeactive={ handleDeactive }
+                    state={ favorite }
+                />
             </div>
+
         </div>
 
 

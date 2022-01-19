@@ -53,6 +53,13 @@
     font-weight: 300;
 }
 
+.m-card-track__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .m-card-track__footer span {
     font-size: var(--lg);
     font-weight: 500;
@@ -91,7 +98,7 @@
     }
 
     .m-card-track__footer {
-        bottom: 28px;
+        bottom: 16px;
         padding-right: 12px;
         position: absolute;
         right: 0;
