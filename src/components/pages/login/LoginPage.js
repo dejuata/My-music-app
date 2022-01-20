@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 
 import { getUrlLogin } from '../../../api/selectors/getUrlLogin';
 import { LoginButton } from '../../atoms/login/LoginButton';

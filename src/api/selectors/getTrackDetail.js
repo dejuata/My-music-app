@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { convertMillisToMinutesAndSeconds } from '../../helpers/convertMillisToMinutesAndSeconds';
-import { truncateString } from '../../helpers/trucateString';
 import { baseUrl, endpoints } from '../config';
 
 

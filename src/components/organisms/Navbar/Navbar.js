@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { FaHeart, FaPowerOff, FaHome } from 'react-icons/fa';
 
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { startLogout } from '../../../actions/auth';
 import { finishLoading } from '../../../actions/ui';
 import { logoutTrack } from '../../../actions/track';

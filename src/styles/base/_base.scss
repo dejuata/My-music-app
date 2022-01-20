@@ -1,3 +1,15 @@
+body {
+    background-color: $color-dark;
+    box-sizing: border-box;
+    color: $color-white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: $font-lg;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -36,10 +48,10 @@ a {
 }
 
 .input {
-    background-color: var(--color-input-field);
+    background-color: $color-input-field;
     border-radius: 8px;
     border: none;
-    font-size: var(--md);
+    font-size: $font-md;
     height: 30px;
     padding: 6px;
 

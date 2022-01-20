@@ -7,7 +7,7 @@ import ReactLoading from "react-loading";
 
 export const FavoritesPage = () => {
 
-    const { token, logged } = useSelector(state => state.auth);
+    const { token } = useSelector(state => state.auth);
     const { tracks } = useSelector(state => state.favorite);
     const [loading, setLoading] = useState(true)
 

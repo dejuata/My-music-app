@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { login } from '../../../actions/auth';
 
 import { getTokenFromUrl } from '../../../api/selectors/getTokenFromUrl';

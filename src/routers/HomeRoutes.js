@@ -12,7 +12,7 @@ import ReactLoading from "react-loading";
 
 export const HomeRoutes = () => {
 
-    const { token, logged } = useSelector(state => state.auth);
+    const { token } = useSelector(state => state.auth);
     const [loading, setLoading] = useState(true)
     const dispatch = useDispatch();
 

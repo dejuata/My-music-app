@@ -18,7 +18,7 @@ export const useTrackDetail = ( trackId ) => {
                     loading: false
                 })
             })
-    }, [])
+    }, [token, trackId])
 
     return state;
 }

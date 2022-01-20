@@ -5,6 +5,7 @@ import { persistor, store } from './store/store';
 import { PersistGate } from 'redux-persist/integration/react'
 
 import 'animate.css';
+import './styles/styles.scss';
 
 export const MyMusicApp = () => {
 

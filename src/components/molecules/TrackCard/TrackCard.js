@@ -18,7 +18,7 @@ export const TrackCard = ({
     favorite
 }) => {
 
-    const { token, logged } = useSelector(state => state.auth);
+    const { token } = useSelector(state => state.auth);
     const { pathname } = useLocation();
     const dispatch = useDispatch();
 
