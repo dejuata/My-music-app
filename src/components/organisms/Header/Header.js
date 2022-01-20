@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
 
@@ -7,11 +8,14 @@ export const Header = () => {
     const { name } = useSelector(state => state.auth)
 
     return (
-        <header className='header'>
-            <div className='header__logo'>
-                <img src={logoPath} alt="logo"/>
-                MY MUSIC APP
-            </div>
+        <header className='o-header'>
+            <NavLink to="/">
+                <div className='o-header__logo'>
+                    <img src={logoPath} alt="logo"/>
+                    MY MUSIC APP
+                </div>
+            </NavLink>
+
             <p>{ name }</p>
         </header>
     )

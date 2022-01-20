@@ -8,14 +8,14 @@ export const favoriteReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.setFavorites:
             return {
+                ...state,
                 tracks: action.payload
             }
 
         case types.removeFavorite:
-            state.tracks[action.payload].favorite = false;
-            delete state.tracks[action.payload];
             return {
-                ...state
+                ...state,
+                tracks: state.tracks.filter( track => track.id !== action.payload)
             }
 
         default:

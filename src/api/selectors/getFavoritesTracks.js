@@ -9,7 +9,7 @@ export const getFavoritesTracks =  async (token) => {
     let tracks = [];
     try {
 
-        const res = await axios.get(`${baseUrl}/${endpoints.favorites}`, {
+        const res = await axios.get(`${baseUrl}/${endpoints.favorites}?limit=50`, {
             headers: { Authorization: `Bearer ${token}` },
         })
 

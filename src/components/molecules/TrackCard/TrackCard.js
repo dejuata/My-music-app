@@ -15,8 +15,7 @@ export const TrackCard = ({
     artists,
     duration,
     image,
-    favorite,
-    index
+    favorite
 }) => {
 
     const { token, logged } = useSelector(state => state.auth);
@@ -25,25 +24,29 @@ export const TrackCard = ({
 
     const handleActive = () => {
         putFavoriteTrack(token, id)
+
         if (pathname === '/') {
-            dispatch( addTrackFavorite(index) );
+            dispatch( addTrackFavorite(id) );
         }
+
     }
 
     const handleDeactive = () => {
         deleteFavoriteTrack(token, id)
+
         if (pathname === '/favorites') {
-            dispatch( removeFavorite(index) );
+            dispatch( removeFavorite(id) );
+            dispatch( removeTrackFavorite(id) );
         }
 
         if (pathname === '/') {
-            dispatch( removeTrackFavorite(index) );
+            dispatch( removeTrackFavorite(id) );
         }
     }
 
     return (
 
-        <div className='m-card-track'>
+        <div className='m-card-track animate__animated animate__fadeIn '>
 
             <div className='m-card-track__body'>
                 <Link to={`/track/${id}`} style={{ textDecoration: 'none' }}>

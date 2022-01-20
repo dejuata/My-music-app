@@ -1,17 +1,14 @@
 import React from 'react'
 import { TrackCard } from '../../molecules/TrackCard/TrackCard'
-import { Link } from 'react-router-dom';
 
-import './tracklist.css';
 
-export const TrackList = ({ tracks }) => {
-
+export const TrackList = ({ tracks, showOnlyFavorite = false}) => {
+    console.log('TrackList', tracks)
 
     return (
-        <div className='card-container'>
+        <div className='o-track-list-container'>
             {
-                tracks.map( (track, index) => {
-                    track.index = index;
+                tracks.map( track => {
                     return <TrackCard  key={ track.id } { ...track }/>
                 })
             }

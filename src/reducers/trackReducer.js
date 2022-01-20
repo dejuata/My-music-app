@@ -8,19 +8,36 @@ export const trackReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.setTracks:
             return {
+                ...state,
                 tracks: action.payload
             }
 
         case types.addTrackFavorite:
-            state.tracks[action.payload].favorite = true;
             return {
-                ...state
+                ...state,
+                tracks: state.tracks.map(track => {
+                    if ( track.id === action.payload ) {
+                        track.favorite = true
+                    }
+                    return track
+                })
             }
 
-        case types.removeFavorite:
-            state.tracks[action.payload].favorite = false;
+        case types.removeTrackFavorite:
             return {
-                ...state
+                ...state,
+                tracks: state.tracks.map(track => {
+                    if ( track.id === action.payload ) {
+                        track.favorite = false
+                    }
+                    return track
+                })
+            }
+
+        case types.logoutTrack:
+            return {
+                ...state,
+                tracks: []
             }
 
         default:

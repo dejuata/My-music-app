@@ -20,7 +20,7 @@ export const RedirectPage = () => {
     }, [dispatch, hash])
 
     return (
-        <div>
-        </div>
+        <>
+        </>
     )
 }

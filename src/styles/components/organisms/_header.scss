@@ -1,4 +1,4 @@
-.header {
+.o-header {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -12,20 +12,21 @@
     z-index: 100;
 }
 
-.header p {
+.o-header > p {
     margin: 0;
     font-size: 12px;
 }
 
-.header__logo {
+.o-header__logo {
     display: flex;
     align-items: center;
     column-gap: 6px;
     font-size: $font-sm;
     font-weight: bold;
+    color: $color-dark;
 }
 
-.header__logo img {
+.o-header__logo img {
     width: 34px;
     height: 34px;
 }

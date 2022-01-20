@@ -3,10 +3,10 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { FaHeart, FaPowerOff, FaHome } from 'react-icons/fa';
 
 
-import './navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogout } from '../../../actions/auth';
 import { finishLoading } from '../../../actions/ui';
+import { logoutTrack } from '../../../actions/track';
 
 export const Navbar = () => {
 
@@ -17,8 +17,9 @@ export const Navbar = () => {
         // dispatch( removeToken() );
         // if (logged) {
         // }
-        dispatch( startLogout() )
-        dispatch( finishLoading() )
+        dispatch( startLogout() );
+        dispatch( finishLoading() );
+        dispatch( logoutTrack() )
     }
 
     return (

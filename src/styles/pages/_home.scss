@@ -22,3 +22,10 @@
 .home__container-title h2{
     margin: 0;
 }
+
+.home__loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

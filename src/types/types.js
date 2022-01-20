@@ -12,6 +12,7 @@ export const types = {
     setTracks: '[track] set tracks',
     addTrackFavorite: '[track] add track favorite',
     removeTrackFavorite: '[track] remove track favorite',
+    logoutTrack: '[track] logout cleaning tracks',
 
     setFavorites: '[favorite] set favorite',
     addFavorite: '[favorite] add favorite',

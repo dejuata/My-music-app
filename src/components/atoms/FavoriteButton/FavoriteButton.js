@@ -7,10 +7,8 @@ export const FavoriteButton = ({ funcActive, funcDeactive, state }) => {
 
     const handleOnClick = () => {
         if (!active) {
-            console.log('active')
             funcActive();
         } else {
-            console.log('deactive')
             funcDeactive();
         }
         setActive(!active)

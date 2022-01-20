@@ -5,12 +5,16 @@ export const setTracks = (tracks) => ({
     payload: tracks
 })
 
-export const addTrackFavorite= (index) => ({
+export const addTrackFavorite = (id) => ({
     type: types.addTrackFavorite,
-    payload: index
+    payload: id
 })
 
-export const removeTrackFavorite= (index) => ({
+export const removeTrackFavorite = (id) => ({
     type: types.removeTrackFavorite,
-    payload: index
+    payload: id
+})
+
+export const logoutTrack = () => ({
+    type: types.logoutTrack
 })
