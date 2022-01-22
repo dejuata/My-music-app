@@ -1,16 +1,15 @@
-import axios from 'axios';
-import { baseUrl, endpoints } from '../config';
+import axiosInstance from '../axiosInstance';
+import { endpoints } from '../config';
 
 
-export const putFavoriteTrack =  async (token, idTrack) => {
+export const putFavoriteTrack =  async (idTrack) => {
 
     try {
 
-        const res = await axios.put(
-            `${baseUrl}/${endpoints.favorites}`,
+        const res = await axiosInstance.put(
+            `/${endpoints.favorites}`,
             {},
             {
-                headers: { Authorization: `Bearer ${token}` },
                 params: { ids: idTrack}
             }
         )

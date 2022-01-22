@@ -5,7 +5,7 @@ export const setFavorites = (payload) => ({
     payload
 })
 
-export const removeFavorite= (index) => ({
+export const removeFavorite= (payload) => ({
     type: types.removeFavorite,
-    payload: index
+    payload
 })

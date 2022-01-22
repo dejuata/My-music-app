@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test SpotifyButton Should be render SpotifyButton 1`] = `
+<a
+  href="https://url-track-spotify"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <div
+    className="btn btn-secondary"
+  >
+    Listen on Spotify
+  </div>
+</a>
+`;

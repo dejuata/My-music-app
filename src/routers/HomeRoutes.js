@@ -12,19 +12,18 @@ import ReactLoading from "react-loading";
 
 export const HomeRoutes = () => {
 
-    const { token } = useSelector(state => state.auth);
     const [loading, setLoading] = useState(true)
     const dispatch = useDispatch();
 
     useEffect(() => {
 
-        getRecommendedTracks('latin', token)
+        getRecommendedTracks('latin')
             .then( data => {
                 dispatch( setTracks(data) );
                 setLoading(false);
             })
 
-    }, [ dispatch, token ])
+    }, [ dispatch ])
 
     return (
         <>

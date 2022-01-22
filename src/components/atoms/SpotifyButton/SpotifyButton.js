@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const SpotifyButton = ({ url }) => {
     return (
@@ -12,4 +13,8 @@ export const SpotifyButton = ({ url }) => {
             </div>
         </a>
     )
+}
+
+SpotifyButton.propTypes = {
+    url: PropTypes.string.isRequired
 }

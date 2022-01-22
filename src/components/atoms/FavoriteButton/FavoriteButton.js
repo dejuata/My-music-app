@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { FaHeart } from 'react-icons/fa';
 
-export const FavoriteButton = ({ funcActive, funcDeactive, state }) => {
+export const FavoriteButton = ({ funcActive, funcDeactive, state = false}) => {
 
     const [active, setActive] = useState(state)
 
     const handleOnClick = () => {
-        if (!active) {
-            funcActive();
-        } else {
-            funcDeactive();
-        }
+        !active ? funcActive() : funcDeactive()
         setActive(!active)
     }
 
@@ -24,4 +21,10 @@ export const FavoriteButton = ({ funcActive, funcDeactive, state }) => {
             />
         </button>
     )
+}
+
+FavoriteButton.propTypes = {
+    funcActive: PropTypes.func.isRequired,
+    funcDeactive: PropTypes.func.isRequired,
+    state: PropTypes.bool
 }

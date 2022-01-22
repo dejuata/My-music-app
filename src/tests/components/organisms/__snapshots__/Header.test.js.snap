@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Header should be render Header 1`] = `
+<header
+  className="o-header"
+>
+  <a
+    aria-current="page"
+    className="active"
+    href="/"
+    onClick={[Function]}
+  >
+    <div
+      className="o-header__logo"
+    >
+      <img
+        alt="logo"
+        src="/assets/logo.svg"
+      />
+      MY MUSIC APP
+    </div>
+  </a>
+  <p>
+    Juan David
+  </p>
+</header>
+`;

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test TrackDetail Should be render TrackDetail 1`] = `
+<div
+  className="o-track-detail"
+>
+  <figure
+    className="o-track-detail__image"
+  >
+    <img
+      alt="Voy Pa'Encima"
+      src="https://i.scdn.co/image/ab67616d00001e021386b29ab009dd27c398d141"
+    />
+  </figure>
+  <div
+    className="o-track-detail__body"
+  >
+    <div
+      className="o-track-detail__body-title"
+    >
+      <h2>
+        Desnúdate Mujer
+      </h2>
+      <p>
+        Frankie Ruiz
+      </p>
+    </div>
+    <div
+      className="o-track-detail__body-info"
+    >
+      <p>
+        This song belongs to the Album 
+        <strong>
+          Voy Pa'Encima
+        </strong>
+         released on 
+        .
+      </p>
+      <p>
+        <strong>
+          Duration: 
+        </strong>
+        4:47
+         min.
+      </p>
+    </div>
+    <div
+      className="o-track-detail__body-footer"
+    >
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          className="btn btn-secondary"
+        >
+          Listen on Spotify
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;

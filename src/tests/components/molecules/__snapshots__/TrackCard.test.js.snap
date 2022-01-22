@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test TrackCard Should be render TrackCard 1`] = `
+<div
+  className="m-card-track animate__animated animate__fadeIn "
+>
+  <div
+    className="m-card-track__body"
+  >
+    <a
+      href="/track/1"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <figure
+        className="m-card-track__body-image"
+      >
+        <img
+          alt="Voy Pa'Encima"
+          src="https://i.scdn.co/image/ab67616d00001e021386b29ab009dd27c398d141"
+        />
+      </figure>
+      <div
+        className="m-card-track__body-detail"
+      >
+        <p>
+          Desnúdate Mujer
+        </p>
+        <p>
+          Frankie Ruiz
+        </p>
+      </div>
+    </a>
+  </div>
+  <div
+    className="m-card-track__footer"
+  >
+    <span>
+      4:47
+    </span>
+    <button
+      className="a-favorite-button"
+      onClick={[Function]}
+    >
+      <svg
+        className=" a-favorite__icon false"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 512 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+          key="0"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;

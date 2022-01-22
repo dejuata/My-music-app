@@ -1,20 +1,18 @@
-import axios from 'axios';
 import { convertMillisToMinutesAndSeconds } from '../../helpers/convertMillisToMinutesAndSeconds';
 import { truncateString } from '../../helpers/trucateString';
-import { baseUrl, endpoints } from '../config';
+import axiosInstance from '../axiosInstance';
+import { endpoints } from '../config';
 import { checkFavoritesTracks } from './checkFavoritesTracks';
 
 
-export const getRecommendedTracks =  async (category, token) => {
+export const getRecommendedTracks =  async (category) => {
 
     let tracks = [];
     let idTracks = [];
     try {
         const limit = 50;
 
-        const res = await axios.get(`${baseUrl}/${endpoints.recommendations}?seed_genres=${category}&limit=${limit}`, {
-            headers: { Authorization: `Bearer ${token}` },
-        })
+        const res = await axiosInstance.get(`/${endpoints.recommendations}?seed_genres=${category}&limit=${limit}`)
 
         const { data, status } = res;
 
@@ -37,7 +35,7 @@ export const getRecommendedTracks =  async (category, token) => {
 
         // Verificar la lista de canciones obtenidas si están marcadas
         // como favoritas
-        const idChecked = await checkFavoritesTracks(token, idTracks)
+        const idChecked = await checkFavoritesTracks(idTracks)
 
         // Asignar favorito
         tracks = tracks.map( (track, index) => {

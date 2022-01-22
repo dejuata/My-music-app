@@ -19,13 +19,11 @@ export const startLoginEmailPassword = (email, password) =>{
         dispatch( startLoading() );
 
         const auth = getAuth();
-        signInWithEmailAndPassword(auth, email, password)
+        return signInWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
-                console.log('dispatch login')
                 dispatch(login(user.uid, user.displayName, 'firebase', ''))
             })
             .catch( (err) => {
-                console.log(err.code, err.message);
                 dispatch( finishLoading() );
                 Swal.fire('Error', err.message, 'error')
             })
@@ -85,4 +83,9 @@ export const startLogout = () => {
 
 export const logout = () => ({
     type: types.logout
+})
+
+export const setToken = (payload) => ({
+    type: types.setToken,
+    payload
 })

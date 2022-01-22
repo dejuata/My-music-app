@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export const Logo = ({ showTitle = true }) => {
+export const Logo = () => {
 
     const logoPath = `/assets/logo.svg`;
 
@@ -10,8 +10,7 @@ export const Logo = ({ showTitle = true }) => {
             <div className='a-logo-container__image'>
                 <img src={logoPath} alt="logo" />
             </div>
-            { showTitle && <p className='a-logo-container__title'>MY MUSIC APP</p>}
-
+            <p className='a-logo-container__title'>MY MUSIC APP</p>
         </div>
     )
 }

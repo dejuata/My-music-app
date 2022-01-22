@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test AppRouter Should be render AppRouter 1`] = `
+<div
+  className="auth__container"
+>
+  <div
+    className="auth-form__container"
+  >
+    <div
+      className="a-logo-container"
+    >
+      <div
+        className="a-logo-container__image"
+      >
+        <img
+          alt="logo"
+          src="/assets/logo.svg"
+        />
+      </div>
+      <p
+        className="a-logo-container__title"
+      >
+        MY MUSIC APP
+      </p>
+    </div>
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-control mb-2"
+      >
+        <label
+          className="label"
+        >
+          Email address
+        </label>
+        <input
+          autoComplete="off"
+          className="input"
+          name="email"
+          onChange={[Function]}
+          placeholder="example@email.com"
+          type="email"
+          value="demo@gmail.com"
+        />
+      </div>
+      <div
+        className="form-control mb-3"
+      >
+        <label
+          className="label"
+        >
+          Password
+        </label>
+        <input
+          autoComplete="off"
+          className="input"
+          name="password"
+          onChange={[Function]}
+          placeholder="********"
+          type="password"
+          value="123456"
+        />
+      </div>
+      <button
+        className="btn btn-primary"
+        type="submit"
+      >
+        Log in
+      </button>
+      <a
+        className="auth__link"
+        href="/auth/register"
+        onClick={[Function]}
+      >
+        Create new account
+      </a>
+    </form>
+    <div
+      className="auth__button"
+    >
+      <a
+        href="https://accounts.spotify.com/authorize?client_id=13acf932b40845cc882aab4525a8df81&response_type=token&redirect_uri=http://localhost:3000/auth/redirect&scope=user-library-modify%20user-library-read&show_dialog=true"
+      >
+        <div
+          className="btn btn-secondary"
+        >
+          Log In with Spotify
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;

@@ -1,71 +1,32 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom';
-import { putFavoriteTrack } from '../../../api/selectors/putFavoriteTrack';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { FavoriteButton } from '../../atoms/FavoriteButton/FavoriteButton';
-import { deleteFavoriteTrack } from '../../../api/selectors/deleteFavoriteTrack';
-import { removeFavorite } from '../../../actions/favorite';
-import { addTrackFavorite, removeTrackFavorite } from '../../../actions/track';
 
-export const TrackCard = ({
-    id,
-    name,
-    name_short,
-    album,
-    artists,
-    duration,
-    image,
-    favorite
-}) => {
-
-    const { token } = useSelector(state => state.auth);
-    const { pathname } = useLocation();
-    const dispatch = useDispatch();
-
-    const handleActive = () => {
-        putFavoriteTrack(token, id)
-
-        if (pathname === '/') {
-            dispatch( addTrackFavorite(id) );
-        }
-
-    }
-
-    const handleDeactive = () => {
-        deleteFavoriteTrack(token, id)
-
-        if (pathname === '/favorites') {
-            dispatch( removeFavorite(id) );
-            dispatch( removeTrackFavorite(id) );
-        }
-
-        if (pathname === '/') {
-            dispatch( removeTrackFavorite(id) );
-        }
-    }
+export const TrackCard = ({ track, handleActive, handleDeactive }) => {
 
     return (
 
         <div className='m-card-track animate__animated animate__fadeIn '>
 
             <div className='m-card-track__body'>
-                <Link to={`/track/${id}`} style={{ textDecoration: 'none' }}>
+                <Link to={`/track/${track.id}`} style={{ textDecoration: 'none' }}>
                     <figure className='m-card-track__body-image'>
-                        <img src={ image } alt={ album }/>
+                        <img src={ track.image } alt={ track.album }/>
                     </figure>
                     <div className='m-card-track__body-detail'>
-                        <p>{ name_short }</p>
-                        <p>{ artists }</p>
+                        <p>{ track.name_short }</p>
+                        <p>{ track.artists }</p>
                     </div>
                 </Link>
             </div>
 
             <div className='m-card-track__footer'>
-                <span>{ duration }</span>
+                <span>{ track.duration }</span>
                 <FavoriteButton
                     funcActive={ handleActive }
                     funcDeactive={ handleDeactive }
-                    state={ favorite }
+                    state={ track.favorite }
                 />
             </div>
 
@@ -73,4 +34,10 @@ export const TrackCard = ({
 
 
     )
+}
+
+TrackCard.propTypes = {
+    handleActive: PropTypes.func.isRequired,
+    handleDeactive: PropTypes.func.isRequired,
+    track: PropTypes.object.isRequired
 }

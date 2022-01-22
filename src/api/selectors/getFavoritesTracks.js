@@ -1,17 +1,15 @@
-import axios from 'axios';
 import { convertMillisToMinutesAndSeconds } from '../../helpers/convertMillisToMinutesAndSeconds';
 import { truncateString } from '../../helpers/trucateString';
-import { baseUrl, endpoints } from '../config';
+import axiosInstance from '../axiosInstance';
+import { endpoints } from '../config';
 
 
-export const getFavoritesTracks =  async (token) => {
+export const getFavoritesTracks =  async () => {
 
     let tracks = [];
     try {
 
-        const res = await axios.get(`${baseUrl}/${endpoints.favorites}?limit=50`, {
-            headers: { Authorization: `Bearer ${token}` },
-        })
+        const res = await axiosInstance.get(`/${endpoints.favorites}?limit=50`)
 
         const { data, status } = res;
 

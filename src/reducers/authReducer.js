@@ -28,6 +28,12 @@ export const authReducer = (state = initialState, action) => {
                 logged: false
             }
 
+        case types.setToken:
+            return {
+                ...state,
+                token: action.payload
+            }
+
         default:
             return state;
     }

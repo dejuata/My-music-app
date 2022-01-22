@@ -1,12 +1,9 @@
-import axios from "axios";
-import { baseUrl, endpoints } from '../config';
+import axiosInstance from "../axiosInstance";
+import { endpoints } from '../config';
 
-export const getUserInfo = async (token) => {
+export const getUserInfo = async () => {
     try {
-        const res = await axios.get(`${baseUrl}/${endpoints.me}`, {
-            headers: { Authorization: `Bearer ${token}` },
-        })
-
+        const res = await axiosInstance.get(`/${endpoints.me}`)
         const { data, status } = res;
 
         if (status === 200) {

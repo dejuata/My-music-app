@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export const LoginButton = ({ url }) => {
 
@@ -9,4 +10,8 @@ export const LoginButton = ({ url }) => {
             </div>
         </a>
     )
+}
+
+LoginButton.propTypes = {
+    url: PropTypes.string.isRequired
 }

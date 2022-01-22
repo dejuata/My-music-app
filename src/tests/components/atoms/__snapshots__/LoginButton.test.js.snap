@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test LoginButton Should be render LoginButton 1`] = `
+<a
+  href="https://localhost:3000/url-authorization-spotify"
+>
+  <div
+    className="btn btn-secondary"
+  >
+    Log In with Spotify
+  </div>
+</a>
+`;

@@ -11,12 +11,8 @@ import { logoutTrack } from '../../../actions/track';
 export const Navbar = () => {
 
     const dispatch = useDispatch()
-    // const { logged } = useSelector(state => state.token);
 
     const handleLogout = () => {
-        // dispatch( removeToken() );
-        // if (logged) {
-        // }
         dispatch( startLogout() );
         dispatch( finishLoading() );
         dispatch( logoutTrack() )

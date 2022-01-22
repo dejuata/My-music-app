@@ -7,21 +7,20 @@ import ReactLoading from "react-loading";
 
 export const FavoritesPage = () => {
 
-    const { token } = useSelector(state => state.auth);
     const { tracks } = useSelector(state => state.favorite);
-    const [loading, setLoading] = useState(true)
+    const [ loading, setLoading ] = useState(true)
 
     const dispatch = useDispatch();
 
     useEffect(() => {
 
-        getFavoritesTracks(token)
+        getFavoritesTracks()
             .then( data => {
                 dispatch( setFavorites(data) );
                 setLoading(false);
             })
 
-    }, [token, dispatch])
+    }, [dispatch])
 
     return (
         <>
@@ -41,7 +40,7 @@ export const FavoritesPage = () => {
                                 <hr />
                             </div>
 
-                            <TrackList tracks={ tracks } showOnlyFavorite={ true }/>
+                            <TrackList tracks={ tracks } />
                         </>
                     )
 

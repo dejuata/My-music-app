@@ -1,15 +1,15 @@
 import axios from 'axios';
+import axiosInstance from '../axiosInstance';
 import { baseUrl, endpoints } from '../config';
 
 
-export const deleteFavoriteTrack =  async (token, idTrack) => {
+export const deleteFavoriteTrack =  async (idTrack) => {
 
     try {
 
-        const res = await axios.delete(
-            `${baseUrl}/${endpoints.favorites}`,
+        const res = await axiosInstance.delete(
+            `/${endpoints.favorites}`,
             {
-                headers: { Authorization: `Bearer ${token}` },
                 params: { ids: idTrack}
             }
         )

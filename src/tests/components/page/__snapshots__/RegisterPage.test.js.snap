@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test LoginPage Should be render RegisterPage 1`] = `
+<div
+  className="auth-form__container"
+>
+  <div
+    className="a-logo-container"
+  >
+    <div
+      className="a-logo-container__image"
+    >
+      <img
+        alt="logo"
+        src="/assets/logo.svg"
+      />
+    </div>
+    <p
+      className="a-logo-container__title"
+    >
+      MY MUSIC APP
+    </p>
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="alert alert-error"
+    />
+    <div
+      className="form-control mb-2"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <input
+        autoComplete="off"
+        className="input"
+        name="name"
+        onChange={[Function]}
+        placeholder="Your name"
+        type="text"
+        value="Juan David"
+      />
+    </div>
+    <div
+      className="form-control mb-2"
+    >
+      <label
+        className="label"
+      >
+        Email address
+      </label>
+      <input
+        autoComplete="off"
+        className="input"
+        name="email"
+        onChange={[Function]}
+        placeholder="example@email.com"
+        type="email"
+        value="demo1@gmail.com"
+      />
+    </div>
+    <div
+      className="form-control mb-2"
+    >
+      <label
+        className="label"
+      >
+        Password
+      </label>
+      <input
+        autoComplete="off"
+        className="input"
+        name="password"
+        onChange={[Function]}
+        placeholder="********"
+        type="password"
+        value="123456"
+      />
+    </div>
+    <div
+      className="form-control mb-3"
+    >
+      <label
+        className="label"
+      >
+        Confirm Password
+      </label>
+      <input
+        autoComplete="off"
+        className="input"
+        name="password2"
+        onChange={[Function]}
+        placeholder="********"
+        type="password"
+        value="123456"
+      />
+    </div>
+    <button
+      className="btn btn-primary"
+      type="submit"
+    >
+      Sign Up
+    </button>
+    <a
+      className="auth__link"
+      href="/auth/login"
+      onClick={[Function]}
+    >
+      Already registered ?
+    </a>
+  </form>
+</div>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Logo Should be render Logo 1`] = `
+<div
+  className="a-logo-container"
+>
+  <div
+    className="a-logo-container__image"
+  >
+    <img
+      alt="logo"
+      src="/assets/logo.svg"
+    />
+  </div>
+  <p
+    className="a-logo-container__title"
+  >
+    MY MUSIC APP
+  </p>
+</div>
+`;

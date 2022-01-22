@@ -1,13 +1,12 @@
-import axios from 'axios';
+import axiosInstance from '../axiosInstance';
 import { baseUrl, endpoints } from '../config';
 
 
-export const checkFavoritesTracks =  async (token, tracks) => {
+export const checkFavoritesTracks =  async (tracks) => {
 
     try {
 
-        const res = await axios.get(`${baseUrl}/${endpoints.checkFavorites}`, {
-            headers: { Authorization: `Bearer ${token}` },
+        const res = await axiosInstance.get(`${baseUrl}/${endpoints.checkFavorites}`, {
             params: { ids: tracks.join(',') },
         })
 
@@ -15,9 +14,8 @@ export const checkFavoritesTracks =  async (token, tracks) => {
 
         if (status === 200) {
             return data
-        } else {
-            return []
         }
+
 
     } catch (err) {
         console.log('[Error] getFavoritesTracks', err)

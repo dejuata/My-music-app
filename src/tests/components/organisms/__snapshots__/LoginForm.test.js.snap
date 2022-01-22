@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test LoginPage Should be render LoginForm 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control mb-2"
+  >
+    <label
+      className="label"
+    >
+      Email address
+    </label>
+    <input
+      autoComplete="off"
+      className="input"
+      name="email"
+      onChange={[Function]}
+      placeholder="example@email.com"
+      type="email"
+      value="demo@gmail.com"
+    />
+  </div>
+  <div
+    className="form-control mb-3"
+  >
+    <label
+      className="label"
+    >
+      Password
+    </label>
+    <input
+      autoComplete="off"
+      className="input"
+      name="password"
+      onChange={[Function]}
+      placeholder="********"
+      type="password"
+      value="123456"
+    />
+  </div>
+  <button
+    className="btn btn-primary"
+    type="submit"
+  >
+    Log in
+  </button>
+  <a
+    className="auth__link"
+    href="/auth/register"
+    onClick={[Function]}
+  >
+    Create new account
+  </a>
+</form>
+`;

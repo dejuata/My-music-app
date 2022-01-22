@@ -10,7 +10,7 @@ export const AppRouter = () => {
 
     const [checking, setChecking] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false)
-    const { token, logged } = useSelector(state => state.auth);
+    const { logged } = useSelector(state => state.auth);
 
     useEffect(() => {
         if (logged) {
@@ -19,7 +19,7 @@ export const AppRouter = () => {
             setIsLoggedIn(false);
         }
         setChecking(false)
-    }, [logged, token])
+    }, [logged])
 
     if (checking) {
         return (

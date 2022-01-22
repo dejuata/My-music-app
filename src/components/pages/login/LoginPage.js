@@ -4,8 +4,6 @@ import { getUrlLogin } from '../../../api/selectors/getUrlLogin';
 import { LoginButton } from '../../atoms/login/LoginButton';
 import { Logo } from '../../atoms/Logo/Logo';
 import { LoginForm } from '../../organisms/LoginForm/LoginForm';
-// import { useLocation, useNavigate } from 'react-router-dom';
-// import { getTokenFromUrl } from '../../../api/selectors/getTokenFromUrl';
 
 
 export const LoginPage = () => {
