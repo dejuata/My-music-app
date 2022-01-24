@@ -18,6 +18,7 @@ export const putFavoriteTrack =  async (idTrack) => {
 
         if (status === 200) {
             console.log('put favorites', res)
+            return res
         }
 
     } catch (err) {

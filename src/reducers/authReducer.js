@@ -1,3 +1,4 @@
+import storage from "redux-persist/lib/storage";
 import { types } from "../types/types";
 
 const initialState = {
@@ -20,6 +21,7 @@ export const authReducer = (state = initialState, action) => {
             }
 
         case types.logout:
+            storage.removeItem('persist:root')
             return {
                 uid: null,
                 name: null,

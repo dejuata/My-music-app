@@ -18,6 +18,12 @@ export const favoriteReducer = (state = initialState, action) => {
                 tracks: state.tracks.filter( track => track.id !== action.payload)
             }
 
+        case types.logoutTrack:
+                return {
+                    ...state,
+                    tracks: []
+                }
+
         default:
             return state;
     }

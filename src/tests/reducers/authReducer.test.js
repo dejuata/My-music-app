@@ -67,7 +67,7 @@ describe('Test authReducer', () => {
         }
 
         const state = authReducer(initialState, action);
-        console.log('->', state)
+
         expect( state ).toEqual( {
             token: 'abc'
         } );

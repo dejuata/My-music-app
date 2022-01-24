@@ -18,7 +18,7 @@ export const checkFavoritesTracks =  async (tracks) => {
 
 
     } catch (err) {
-        console.log('[Error] getFavoritesTracks', err)
+        console.log('[Error] checkFavoritesTracks', err)
         return []
     }
 

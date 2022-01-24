@@ -9,3 +9,7 @@ export const removeFavorite= (payload) => ({
     type: types.removeFavorite,
     payload
 })
+
+export const logoutFavorites = () => ({
+    type: types.logoutFavorite
+})

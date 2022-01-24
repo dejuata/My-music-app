@@ -1,7 +1,7 @@
 import { convertMillisToMinutesAndSeconds } from '../../helpers/convertMillisToMinutesAndSeconds';
 import { truncateString } from '../../helpers/trucateString';
-import axiosInstance from '../axiosInstance';
 import { endpoints } from '../config';
+import axiosInstance from '../axiosInstance';
 
 
 export const getFavoritesTracks =  async () => {

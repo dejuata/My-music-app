@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { login, setToken } from '../../../actions/auth';
 
-import { getTokenFromUrl } from '../../../api/selectors/getTokenFromUrl';
-import { getUserInfo } from '../../../api/selectors/getUserInfo';
+import { getTokenFromUrl } from '../../../api/requests/getTokenFromUrl';
+import { getUserInfo } from '../../../api/requests/getUserInfo';
 
 export const RedirectPage = () => {
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setFavorites } from '../../../actions/favorite';
-import { getFavoritesTracks } from '../../../api/selectors/getFavoritesTracks'
+import { getFavoritesTracks } from '../../../api/requests/getFavoritesTracks'
 import { TrackList } from '../../organisms/TrackList/TrackList';
 import ReactLoading from "react-loading";
 

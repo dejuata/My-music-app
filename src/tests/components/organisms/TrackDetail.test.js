@@ -5,11 +5,14 @@ import { mount } from 'enzyme';
 
 describe('Test TrackDetail', () => {
     const track = demoTracks.tracks[0];
+    track.external_url = 'https://url-track';
 
     const wrapper = mount(
         <MemoryRouter>
             <TrackDetail
-                { ...track }
+                {
+                    ...track
+                }
                 />
         </MemoryRouter>
     )

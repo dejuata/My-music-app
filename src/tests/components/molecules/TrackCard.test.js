@@ -7,11 +7,15 @@ import { MemoryRouter } from 'react-router-dom';
 describe('Test TrackCard', () => {
 
     const track = demoTracks.tracks[0];
+    const handleActive = jest.fn();
+    const handleDeactive = jest.fn();
 
     const wrapper = mount(
         <MemoryRouter>
             <TrackCard
                 track={ track }
+                handleActive={ handleActive }
+                handleDeactive={ handleDeactive }
                 />
         </MemoryRouter>
     )

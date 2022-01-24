@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getUrlLogin } from '../../../api/selectors/getUrlLogin';
+import { getUrlLogin } from '../../../api/requests/getUrlLogin';
 import { LoginButton } from '../../atoms/login/LoginButton';
 import { Logo } from '../../atoms/Logo/Logo';
 import { LoginForm } from '../../organisms/LoginForm/LoginForm';

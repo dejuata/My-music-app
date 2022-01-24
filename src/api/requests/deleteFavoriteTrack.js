@@ -19,6 +19,7 @@ export const deleteFavoriteTrack =  async (idTrack) => {
 
         if (status === 200) {
             console.log('delete favorites', res)
+            return res
         }
 
     } catch (err) {

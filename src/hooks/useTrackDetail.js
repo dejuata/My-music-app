@@ -1,24 +1,35 @@
-import { useEffect, useState } from "react"
-import { useSelector } from "react-redux";
-import { getTrackDetail } from "../api/selectors/getTrackDetail";
+import { useEffect, useRef, useState } from "react"
+import { getTrackDetail } from "../api/requests/getTrackDetail";
 
 export const useTrackDetail = ( trackId ) => {
-    const { token } = useSelector(state => state.auth);
+
+    const isMounted = useRef(true);
 
     const [state, setState] = useState({
-        data: [],
+        data: {},
         loading: true
     })
 
+    useEffect( () => {
+        return () => {
+            isMounted.current = false;
+        }
+    }, [])
+
     useEffect(() => {
-        getTrackDetail(trackId, token)
+
+        setState({ data: {}, loading: true });
+
+        getTrackDetail(trackId)
             .then( tracks => {
-                setState({
-                    data: tracks,
-                    loading: false
-                })
+                if ( isMounted.current ) {
+                    setState({
+                        data: tracks,
+                        loading: false
+                    })
+                }
             })
-    }, [token, trackId])
+    }, [trackId])
 
     return state;
 }

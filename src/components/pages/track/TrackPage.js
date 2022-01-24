@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactLoading from "react-loading";
 import { useParams } from 'react-router-dom';
 import { useTrackDetail } from '../../../hooks/useTrackDetail';
 import { TrackDetail } from '../../organisms/TrackDetail/TrackDetail';
@@ -17,7 +18,9 @@ export const TrackPage = () => {
 
                 loading
                 ?
-                    <p>Loading</p>
+                    <div className='home__loading'>
+                        <ReactLoading type={ 'bubbles' } color="#fff" />
+                    </div>
                 :
                     <TrackDetail {...track}/>
 

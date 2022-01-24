@@ -1,22 +1,19 @@
-import axios from 'axios';
 import { convertMillisToMinutesAndSeconds } from '../../helpers/convertMillisToMinutesAndSeconds';
+import axiosInstance from '../axiosInstance';
 import { baseUrl, endpoints } from '../config';
 
 
 
-export const getTrackDetail =  async (trackId, token) => {
+export const getTrackDetail =  async (trackId) => {
 
     let track = {};
     try {
 
-        const res = await axios.get(`${baseUrl}/${endpoints.tracks}/${trackId}`, {
-            headers: { Authorization: `Bearer ${token}` },
-        })
+        const res = await axiosInstance.get(`${baseUrl}/${endpoints.tracks}/${trackId}`)
 
         // console.log(res)
 
         const { data, status } = res;
-        console.log(data)
         if (status === 200) {
 
             track = {

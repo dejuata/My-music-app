@@ -17,4 +17,5 @@ export const types = {
     setFavorites: '[favorite] set favorite',
     addFavorite: '[favorite] add favorite',
     removeFavorite: '[favorite] remove favorite',
+    logoutFavorite: '[favorite] logout cleaning favorites',
 }

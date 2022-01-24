@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test FavoritesPage Should be render FavoritesPage 1`] = `
+exports[`Test TrackPage Should be render TrackPage 1`] = `
 <div
   className="home__loading"
 >

@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { startLogout } from '../../../actions/auth';
 import { finishLoading } from '../../../actions/ui';
 import { logoutTrack } from '../../../actions/track';
+import { logoutFavorites } from '../../../actions/favorite';
 
 export const Navbar = () => {
 
@@ -15,7 +16,8 @@ export const Navbar = () => {
     const handleLogout = () => {
         dispatch( startLogout() );
         dispatch( finishLoading() );
-        dispatch( logoutTrack() )
+        dispatch( logoutTrack() );
+        dispatch( logoutFavorites() );
     }
 
     return (
