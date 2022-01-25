@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Logo = () => {
 
-    const logoPath = `/assets/logo.svg`;
+    const logoPath = `./assets/logo.svg`;
 
     return (
         <div className='a-logo-container'>
