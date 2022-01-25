@@ -30,7 +30,8 @@ describe('Test TrackPage', () => {
                 artists: 'Frankie Ruiz',
                 duration: '4:47',
                 image: 'https://i.scdn.co/image/ab67616d00001e021386b29ab009dd27c398d141',
-                url: 'https//url-track'
+                url: 'https//url-track',
+                albumTracks: [],
             },
             loading: false
         })

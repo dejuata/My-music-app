@@ -58,18 +58,23 @@ describe('Test authReducer', () => {
     test('should be setToken', () => {
 
         const initialState = {
-            token: null
+            token: null,
+            expires: null
         }
 
         const action = {
             type: types.setToken,
-            payload: 'abc'
+            payload: {
+                access_token: 'abc',
+                expires_in: '3600'
+            }
         }
 
         const state = authReducer(initialState, action);
 
         expect( state ).toEqual( {
-            token: 'abc'
+            token: 'abc',
+            expires: '3600'
         } );
     })
 
