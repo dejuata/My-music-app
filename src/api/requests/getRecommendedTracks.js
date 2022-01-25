@@ -1,5 +1,7 @@
+import { logout } from '../../actions/auth';
 import { convertMillisToMinutesAndSeconds } from '../../helpers/convertMillisToMinutesAndSeconds';
 import { truncateString } from '../../helpers/trucateString';
+import { store } from '../../store/store';
 import axiosInstance from '../axiosInstance';
 import { endpoints } from '../config';
 import { checkFavoritesTracks } from './checkFavoritesTracks';
@@ -49,6 +51,7 @@ export const getRecommendedTracks =  async (category) => {
 
     } catch (err) {
         console.log('[Error] getRecommendedTracks', err)
+        store.dispatch( logout() )
         return tracks
     }
 

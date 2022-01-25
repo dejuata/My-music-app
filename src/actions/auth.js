@@ -63,13 +63,14 @@ export const startGoogleLogin = () =>{
     }
 }
 
-export const login = (uid, name, type, token) => ({
+export const login = (uid, name, type, token, expires) => ({
     type: types.login,
     payload: {
         uid,
         name,
         type,
-        token
+        token,
+        expires
     }
 })
 
@@ -89,3 +90,9 @@ export const setToken = (payload) => ({
     type: types.setToken,
     payload
 })
+
+export const runLogoutTimer = (dispatch, timer) => {
+    setTimeout( () => {
+        dispatch( logout() )
+    }, timer)
+}

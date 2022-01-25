@@ -1,0 +1,44 @@
+
+
+.m-album-tracks {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 16px 0;
+}
+
+.m-album-tracks__heading {
+    align-items: center;
+    color: $color-input-field;
+    display: grid;
+    font-size: $font-md;
+    grid-template-columns: 10% 70% 20%;
+    height: 42px;
+    justify-items: center;
+    text-transform: uppercase;
+}
+
+.m-album-tracks__heading__number {
+    font-style: italic;
+}
+
+.m-album-tracks__heading__title {
+    width: 45%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    justify-self: flex-start;
+    margin-left: 16px;
+}
+
+.m-album-tracks__heading__duration {
+    justify-self: flex-end;
+}
+
+@media (min-width: 768px) {
+
+    .m-album-tracks {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+}
+

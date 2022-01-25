@@ -9,8 +9,10 @@
 // Components
 @import './components/atoms/logo';
 @import './components/atoms/favoriteButton';
+@import './components/atoms/rowTrack';
 
 @import './components/molecules/trackcard';
+@import './components/molecules/albumTracks';
 
 @import './components/organisms/header';
 @import './components/organisms/trackDetail';

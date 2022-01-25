@@ -3,18 +3,11 @@ import { getTrackDetail } from "../api/requests/getTrackDetail";
 
 export const useTrackDetail = ( trackId ) => {
 
-    const isMounted = useRef(true);
-
     const [state, setState] = useState({
         data: {},
         loading: true
     })
 
-    useEffect( () => {
-        return () => {
-            isMounted.current = false;
-        }
-    }, [])
 
     useEffect(() => {
 
@@ -22,12 +15,10 @@ export const useTrackDetail = ( trackId ) => {
 
         getTrackDetail(trackId)
             .then( tracks => {
-                if ( isMounted.current ) {
-                    setState({
-                        data: tracks,
-                        loading: false
-                    })
-                }
+                setState({
+                    data: tracks,
+                    loading: false
+                })
             })
     }, [trackId])
 

@@ -11,6 +11,7 @@ export const endpoints = {
     me: 'me',
     favorites: 'me/tracks',
     checkFavorites: 'me/tracks/contains',
+    albums: 'albums'
 }
 
 export const baseUrl = 'https://api.spotify.com/v1';

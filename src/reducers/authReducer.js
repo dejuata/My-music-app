@@ -6,6 +6,7 @@ const initialState = {
     name: null,
     type: null,
     token: null,
+    expires: null,
     logged: false
 }
 
@@ -17,6 +18,7 @@ export const authReducer = (state = initialState, action) => {
                 name: action.payload.name,
                 type: action.payload.type,
                 token: action.payload.token,
+                expires: action.payload.expires,
                 logged: true
             }
 
@@ -33,7 +35,8 @@ export const authReducer = (state = initialState, action) => {
         case types.setToken:
             return {
                 ...state,
-                token: action.payload
+                token: action.payload.access_token,
+                expires: action.payload.expires_in
             }
 
         default:

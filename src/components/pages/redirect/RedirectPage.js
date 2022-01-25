@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { login, setToken } from '../../../actions/auth';
+import { login, runLogoutTimer, setToken } from '../../../actions/auth';
 
 import { getTokenFromUrl } from '../../../api/requests/getTokenFromUrl';
 import { getUserInfo } from '../../../api/requests/getUserInfo';
@@ -12,13 +12,14 @@ export const RedirectPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const _token = getTokenFromUrl(hash);
+        const { access_token, expires_in } = getTokenFromUrl(hash);
 
-        dispatch( setToken(_token) );
+        dispatch( setToken({ access_token, expires_in }) );
 
         getUserInfo()
             .then( ( {id, displayName} ) => {
-                dispatch( login(id, displayName, 'spotify', _token) );
+                dispatch( login(id, displayName, 'spotify', access_token, expires_in) );
+                runLogoutTimer(dispatch, expires_in * 1000);
             })
 
     }, [dispatch, hash])

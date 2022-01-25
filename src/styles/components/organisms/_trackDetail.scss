@@ -56,9 +56,11 @@
 @media (min-width: 768px) {
 
     .o-track-detail {
+        column-gap: 24px;
         display: flex;
         justify-content: center;
-        column-gap: 24px;
+        margin: 0 auto;
+        width: 80%;
     }
 
     .o-track-detail__image {

@@ -1,0 +1,25 @@
+.a-row-track {
+    align-items: center;
+    border-top: 1px solid #282828;
+    display: grid;
+    font-size: $font-sm;
+    grid-template-columns: 10% 70% 20%;
+    height: 42px;
+    justify-items: center;
+}
+
+.a-row-track__number {
+    color: $color-text-track;
+    width: 12px;
+}
+
+.a-row-track__title {
+    color: $color-white;
+    justify-self: flex-start;
+    margin-left: 16px;
+}
+
+.a-row-track__duration {
+    color: $color-text-track;
+    justify-self: flex-end;
+}

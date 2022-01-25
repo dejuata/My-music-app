@@ -2,30 +2,25 @@ import { convertMillisToMinutesAndSeconds } from '../../helpers/convertMillisToM
 import { truncateString } from '../../helpers/trucateString';
 import { endpoints } from '../config';
 import axiosInstance from '../axiosInstance';
-import { store } from '../../store/store';
-import { logout } from '../../actions/auth';
 
 
-export const getFavoritesTracks =  async () => {
+export const getAlbumsTracks =  async (idAlbum) => {
 
     let tracks = [];
     try {
 
-        const res = await axiosInstance.get(`/${endpoints.favorites}?limit=50`)
+        const res = await axiosInstance.get(`/${endpoints.albums}/${idAlbum}/tracks`)
 
         const { data, status } = res;
 
         if (status === 200) {
-            tracks = data.items.map( ({ track }) => {
+            tracks = data.items.map( track => {
                 return {
                     id: track.id,
                     name: track.name,
                     name_short: truncateString(track.name),
-                    album: track.album.name,
                     artists: track.artists[0].name,
                     duration: convertMillisToMinutesAndSeconds(track.duration_ms),
-                    image: track.album.images[1].url,
-                    favorite: true
                 }
             })
         }
@@ -33,9 +28,7 @@ export const getFavoritesTracks =  async () => {
         return tracks;
 
     } catch (err) {
-
-        console.log('[Error] getFavoritesTracks', err)
-        store.dispatch( logout() )
+        console.log('[Error] getAlbumsTracks', err)
         return tracks
     }
 
